@@ -23,7 +23,9 @@ class BusManager:
 
     def increase_level(self):
         self.current_level += 1
-        self.create_bus()
+        for _ in range(self.current_level):
+            self.create_bus()
+
         for bus in self.buses:
-            bus.bus_speed += 0.1
+            bus.bus_speed += 0.2
             bus.new_level()
